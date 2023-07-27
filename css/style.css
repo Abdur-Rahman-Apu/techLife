@@ -66,8 +66,11 @@ body {
     display: block;
     font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 3.5rem; }
-    @media only screen and (max-width: 37.5em) {
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+    @media only screen and (max-width: 56.25em) {
       .heading-primary--main {
         font-size: 2rem;
         letter-spacing: 1rem; } }
@@ -75,10 +78,14 @@ body {
     display: block;
     font-size: 1rem;
     letter-spacing: 1.75rem;
-    font-weight: 700; }
-    @media only screen and (max-width: 37.5em) {
+    font-weight: 700;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+    @media only screen and (max-width: 56.25em) {
       .heading-primary--sub {
-        letter-spacing: 0.5rem; } }
+        letter-spacing: 0.5rem;
+        font-size: 0.5rem; } }
 
 .u-center-text {
   text-align: center; }
@@ -104,6 +111,26 @@ body {
 .u-margin-top-huge {
   margin-top: 10rem !important; }
 
+.btn, .btn:link, .btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  padding: 1.5rem 4rem;
+  border: none;
+  border-radius: 10rem;
+  transition: all 0.4s; }
+
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+
+.btn--animate {
+  animation-name: moveInBottom;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: backwards; }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, #070335, #050872);
@@ -111,11 +138,6 @@ body {
   background-position: top;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-  @supports (clip-path: polygon(0, 0)) or (-webkit-clip-path: polygon(0, 0)) {
-    .header {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-      height: 95vh; } }
   .header__logo-box {
     position: absolute;
     top: 0;
